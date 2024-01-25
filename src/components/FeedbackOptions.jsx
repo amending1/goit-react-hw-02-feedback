@@ -7,19 +7,19 @@ class FeedbackOptions extends Component {
       <div className={css['button-wrapper']}>
         <button
           className={css['button-opinion']}
-          onClick={() => this.handleFeedback('good')}
+          onClick={() => this.props.onLeaveFeedback('good')} //Przekazanie funkcji jako props jest sposobem, aby komponent mógł komunikować się z rodzicem. 'good' to argument przekazywany do funkcji handleFeedback
         >
           Good
         </button>
         <button
           className={css['button-opinion']}
-          onClick={() => this.handleFeedback('neutral')}
+          onClick={() => this.props.onLeaveFeedback('neutral')} 
         >
           Neutral
         </button>
         <button
           className={css['button-opinion']}
-          onClick={() => this.handleFeedback('bad')}
+          onClick={() => this.props.onLeaveFeedback('bad')}
         >
           Bad
         </button>
