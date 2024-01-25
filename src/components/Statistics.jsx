@@ -1,17 +1,8 @@
 import { Component } from 'react';
 import css from './FeedbackForm.module.css';
+import App from '../App';
 
 class Statistics extends Component {
-  constructor(props) {
-    super(props);
-    this.handleFeedback = this.handleFeedback.bind(this);
-    this.state = {
-      good: 0,
-      neutral: 0,
-      bad: 0,
-    };
-  }
-
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
