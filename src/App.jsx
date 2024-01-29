@@ -30,8 +30,7 @@ export class App extends Component {
     const positivePercentage = total > 0 ? Math.round((good / total) * 100) : 0;
 
     return (
-      //czy można polączyć jakoś te dwa divy poniżej?? jak opisać wtedy className??
-      <div className={`${App} ${css['container-feedback-form']}`}>
+      <div className={`App ${css['container-feedback-form']}`}>
         <Section title="Please leave feedback"></Section>
         <Section title="Feedback Options">
           <FeedbackOptions

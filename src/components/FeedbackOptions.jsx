@@ -32,6 +32,8 @@ FeedbackOptions.propTypes ={
 }
 
 export default FeedbackOptions;
+
+//Poprzednia wersja kodu (zostawione krótsze rozwiązanie)
 // return (
 //   <div className={css['button-wrapper']}>
 //     <button
