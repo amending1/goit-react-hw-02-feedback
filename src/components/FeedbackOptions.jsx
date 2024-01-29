@@ -20,7 +20,7 @@ class FeedbackOptions extends Component {
         key={option}
         className={css['button-opinion']}
         onClick={() => onLeaveFeedback(option)}
-      ></button>
+      >{option}</button>
     ));
     return <div className={css['button-wrapper']}>{optionButtons}</div>;
   }
@@ -30,6 +30,8 @@ FeedbackOptions.propTypes ={
   options: PropTypes.object.isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 }
+
+export default FeedbackOptions;
 // return (
 //   <div className={css['button-wrapper']}>
 //     <button
@@ -53,4 +55,4 @@ FeedbackOptions.propTypes ={
 //   </div>
 // );
 
-export default FeedbackOptions;
+

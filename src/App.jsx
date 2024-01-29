@@ -31,29 +31,28 @@ export class App extends Component {
 
     return (
       //czy można polączyć jakoś te dwa divy poniżej?? jak opisać wtedy className??
-      <div className="App">
-        <div className={css['container-feedback-form']}>
-          <Section title="Please leave feedback"></Section>
-          <Section title="Feedback Options">
-            <FeedbackOptions
-              options={this.state}
-              onLeaveFeedback={this.handleFeedback}
-              //funkcja handleFeedback, zdefiniowana w komponencie App, zostanie przekazana jako props do komponentu FeedbackOptions, aby mogła zostać wywołana w odpowiedzi na akcję użytkownika
+      <div className={`${App} ${css['container-feedback-form']}`}>
+        <Section title="Please leave feedback"></Section>
+        <Section title="Feedback Options">
+          <FeedbackOptions
+            options={this.state}
+            onLeaveFeedback={this.handleFeedback}
+            //funkcja handleFeedback, zdefiniowana w komponencie App, zostanie przekazana jako props do komponentu FeedbackOptions, aby mogła zostać wywołana w odpowiedzi na akcję użytkownika
+          />
+        </Section>
+        <Section title="Statistics">
+          {total > 0 ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
             />
-          </Section>
-          <Section title="Statistics">
-            {total > 0 ? (
-              <Statistics
-                good={good}
-                neutral={neutral}
-                bad={bad}
-                total={total}
-                positivePercentage={positivePercentage}
-              />
-            ) : (
-            <Notification message="There is no feedback" />)}
-          </Section>
-        </div>
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
+        </Section>
       </div>
     );
   }
